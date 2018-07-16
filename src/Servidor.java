@@ -16,7 +16,7 @@ public class Servidor {
 		try {
 			registry.bind(nomeServidor, stub);
 		} catch (AlreadyBoundException e) {
-			System.out.println("Repositório " + nomeServidor + " já iniciado, utilize o mesmo ou tente novamente.");
+			System.out.println("Repositório " + nomeServidor + " já iniciado, utilize o mesmo ou tente outro nome.");
 			return getNomeServidor(sc, registry, stub);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
