@@ -11,7 +11,17 @@ public class PartImpl implements Part{
 	private int codigo;
 	private String descricao;
 	private HashMap<Part, Integer> subcomponentes;
+	private String nomeRepo;
 	
+	public String getNomeRepo() {
+		return nomeRepo;
+	}
+
+	public void setNomeRepo(String nomeRepo) {
+		this.nomeRepo = nomeRepo;
+	}
+
+
 	/**
 	 * 
 	 */
