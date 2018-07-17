@@ -52,12 +52,31 @@ public class PartImpl implements Part{
 		return this.subcomponentes;
 	}
 	
+	public void addSubcomponente(Part subParte, int quant) {
+		if( this.subcomponentes == null){
+			this.subcomponentes = new HashMap<Part, Integer>();
+		}
+		this.subcomponentes.put(subParte, quant);
+	}
+	
+	
 	public String toString() {
 		String saida = this.getCodigo() + " - " + this.getNome() + ": " + this.getDescricao();
-//		for (Map.Entry<Part,Integer> p : this.subcomponentes.entrySet()) {
-//			saida += "\n" + p.getValue() + '-' + p.getKey();
-//		}
+		
+		if(getSubcomponentes() != null)
+		for (Map.Entry<Part,Integer> p : this.subcomponentes.entrySet()) {
+			saida += "\nPossui " + p.getValue() + " subComponentes " + p.getKey().getNome();
+		}else{
+			saida += "\nNão possui subComponentes";
+		}
 		return saida;
 	}
+//	public String toString() {
+//		String saida = this.getCodigo() + " - " + this.getNome() + ": " + this.getDescricao();
+////		for (Map.Entry<Part,Integer> p : this.subcomponentes.entrySet()) {
+////			saida += "\n" + p.getValue() + '-' + p.getKey();
+////		}
+//		return saida;
+//	}
 
 }
